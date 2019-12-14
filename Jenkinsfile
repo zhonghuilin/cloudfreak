@@ -13,5 +13,22 @@ pipeline {
                     sh 'mvn  clean install package'
           }
         } 
+   }
+        stage('Copy Artifact') {
+            steps { 
+                    sh 'cp -r petclinic-build/target/*.war docker'
+            }  
     }
-}
+	       }
+        stage('Build docker image ') {
+            steps {
+                script {
+                    
+                    docker.build('prawinkorvi/petclinic-build',./docker")
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                        customImage.push(versionnum+"."+"${env.BUILD_NUMBER}")
+                    }                      
+                }  
+            }  
+   }
+ 
