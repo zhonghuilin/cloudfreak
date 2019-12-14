@@ -1,5 +1,5 @@
 pipeline {
-	agent { any }
+	agent any
     tools {
     	maven 'Maven3'
                  jdk 'JDK8'
@@ -9,6 +9,6 @@ pipeline {
             steps { 
          
                     sh 'mvn  clean package'
-    }
-  } 
-}
+          }
+        } 
+
