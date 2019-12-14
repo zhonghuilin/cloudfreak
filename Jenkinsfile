@@ -9,7 +9,7 @@ pipeline {
             steps { 
                     sh 'pwd'
 		    sh ' cd petclinic'
-                    sh 'mvn  clean package'
+                    sh 'mvn  clean install package'
           }
         } 
     }
