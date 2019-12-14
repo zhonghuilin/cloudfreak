@@ -20,8 +20,8 @@ pipeline {
        }  
     }
 	       
-        stage('Build docker image ') {
-            steps {
+   stage('Build docker image') {
+      steps {
                                  
                     docker.build('prawinkorvi/petclinic-build/docker')
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
