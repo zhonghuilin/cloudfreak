@@ -7,8 +7,10 @@ pipeline {
     stages {      
         stage('Build maven ') {
             steps { 
-         
-                    sh 'mvn  clean package'
+                    sh 'pwd'
+		    sh 'cd /var/lib/jenkins/workspace/petclinic-build/petclinic'
+		    sh 'pwd'
+                    sh 'mvn  clean install package'
           }
         } 
     }
