@@ -19,7 +19,7 @@ pipeline {
           sh 'cp -r petclinic-build/target/*.war docker'
             }  
     }
-	       }
+	       
         stage('Build docker image ') {
             steps {
                 script {
