@@ -26,6 +26,6 @@ pipeline {
                         customImage.push(versionnum+"."+"${env.BUILD_NUMBER}")
                     }                      
                  }  
-            }  
+ }  
          
 
