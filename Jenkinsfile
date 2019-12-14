@@ -7,13 +7,11 @@ pipeline {
     stages {      
         stage('Build maven ') {
             steps { 
-                    sh 'pwd'
-        
-     
+                    sh 'pwd'      
                     sh 'mvn  clean install package'
                 }
             } 
-        }
+        
         stage('Copy Artifact') {
            steps { 
                    sh 'cp -r petclinic-build/target/*.war docker'
