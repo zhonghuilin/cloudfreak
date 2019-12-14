@@ -14,13 +14,13 @@ pipeline {
                 }
             } 
         }
-       stage('Copy Artifact') {
+        stage('Copy Artifact') {
            steps { 
                    sh 'cp -r petclinic-build/target/*.war docker'
             }  
         }
          
-       stage('Build docker image') {
+        stage('Build docker image') {
            steps {
                                  
                     docker.build('prawinkorvi/petclinic-build/docker')
