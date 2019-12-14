@@ -20,12 +20,9 @@ pipeline {
          
         stage('Build docker image') {
            steps {
-                           
                  docker.build('prawinkorvi/petclinic-build/docker')
-                 docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                 docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') 
                  customImage.push(versionnum+"."+"${env.BUILD_NUMBER}")
                  }                     
            }
         }
-	}
-}
