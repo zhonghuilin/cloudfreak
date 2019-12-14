@@ -7,7 +7,7 @@ pipeline {
     stages {      
         stage('Build maven ') {
             steps { 
-         
+                    sh ' cd petclinic'
                     sh 'mvn  clean package'
           }
         } 
