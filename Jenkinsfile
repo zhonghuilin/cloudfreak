@@ -14,7 +14,8 @@ pipeline {
         
         stage('Copy Artifact') {
            steps { 
-                   sh 'cp -r petclinic-build/target/*.war docker'
+                   sh 'pwd'
+		   sh 'cp -r petclinic-build/target/*.war docker'
            }
         }
          
